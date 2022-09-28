@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Maker Faire Rome - The European Edition">
+    <meta name="description" content="Un modello di 4 metri stampato in 3D che rappresenta dettagliatamente il borgo di Amatrice prima del sisma, esposto alla Maker Faire Rome 2016."/>
+    <title>Amatrice stampata in 3D - Un progetto di Maker Faire Rome</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" />
+</head>
+<body>
+
+<div class="tiles">
+    <img src="images/slideshow/01.jpg" />
+    <img src="images/slideshow/02.jpg" />
+    <img src="images/slideshow/03.jpg" />
+    <img src="images/slideshow/04.jpg" />
+    <img src="images/slideshow/05.jpg" />
+    <img src="images/slideshow/06.jpg" />
+    <img src="images/slideshow/07.png" />
+    <img src="images/slideshow/08.jpg" />
+    <img src="images/slideshow/09.jpg" />
+</div>
+
+<script>
+$(function () {
+    var first = true;
+    var fadeIn;
+    fadeIn = function ($img) {
+        var min = 1*1000, max = 20*1000;
+        var delay = Math.floor(Math.random() * (max - min) + min);
+        if (first) {
+            delay = 1000;
+            first = false;
+        }
+        setTimeout(function () {
+            var min = 0.5*1000, max = 4*1000;
+            var delay = Math.floor(Math.random() * (max - min) + min);
+            $img.fadeTo(3000, 0.7, function () {
+                setTimeout(function () {
+                    $img.fadeTo(3000, 0, function () {
+                        fadeIn($img);
+                    });
+                }, delay);
+            });
+        }, delay);
+    };
+    $('.tiles img').css('opacity', 0).each(function () {
+        fadeIn($(this));
+    });
+});
+</script>
+
+<nav id="menu" style="position: absolute; left: 0px; display: block;">
+  <div class="mini-title">
+    Amatrice <span class="subtitle">stampata in 3D</span>
+  </div>
+  <ul class="nav_list">
+    <li>
+      <a href="#" data-scrollto=".contents">INTRO</a>
+    </li>
+    <li>
+      <a href="#" data-scrollto=".title-team">TEAM</a>
+    </li>
+    <li>
+      <a href="#" data-scrollto=".title-gallery">GALLERIA FOTO</a>
+    </li>
+    <li>
+      <a href="#" data-scrollto=".title-download">SCARICA I FILE</a>
+    </li>
+    <li>
+    <a href="#" data-scrollto=".title-press">RASSEGNA STAMPA</a></li>
+  </ul>
+  
+  <a href="http://www.makerfairerome.eu/" class="mfr-logo"><img src="images/logo_mfr.png" alt="Maker Faire Rome" /></a>
+</nav>
+
+<script>
+$(function () {
+    $('.mfr-logo, .mini-title').hide();
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 600) {
+            $('#menu').css('position', 'fixed');
+            $('.mini-title').show();
+            $('.mfr-logo').fadeIn();
+        } else {
+            $('#menu').css('position', 'absolute');
+            $('.mini-title').hide();
+            $('.mfr-logo').fadeOut();
+        }
+    });
+    $('.nav_list a').click(function() {
+        $('html, body').animate({
+            scrollTop: $( $(this).data('scrollto') ).offset().top
+        }, 2000);
+        return false;
+    });
+});
+</script>
+
+<h2 class="slogan">
+    Un omaggio al borgo<br />
+    ferito dal terremoto,<br />
+    per salvare la memoria dei luoghi e incoraggiare la ricostruzione.
+  </h2>
+
+<h1 class="title">
+Amatrice<br />
+<span class="subtitle">stampata in 3D</span>
+</h1>
+
+<div class="sponsors">
+    Un progetto di <a href="http://www.makerfairerome.eu/"><img src="images/logo_mfr.png" alt="Maker Faire Rome" /></a>
+    con la <a href="http://www.regione.lazio.it/"><img src="images/logo_regione_lazio.png" alt="Regione Lazio" /></a>
+    powered by <a href="http://www.dwssystems.com/"><img src="images/logo_dws.png" alt="DWS" /></a>
+</div>
+
+<div class="contents">
+    <div class="slogan2">
+        Il modello in scala 1:500 (4x2 metri) è stato esposto presso la Maker Faire Rome 2016 a 50 giorni dal primo sisma.
+    </div>
+    
+    <div class="intro">
+        <p><a href="images/landscape.jpg"><img src="images/landscape.jpg" /></a>A poche settimane dal tragico sisma che ha interessato il Centro Italia abbiamo voluto rendere omaggio alle popolazioni coinvolte e al loro territorio con una grande riproduzione di Amatrice che è simbolicamente il principale centro abitato ed è quello con il maggior numero di vittime; senza per questo dimenticare i paesi di Accumoli e Arquata del Tronto e le numerose frazioni.</p>
+        <p class="italic_indent">La combinazione della <u>stampa 3D</u>, della <u>fabbricazione digitale</u> e delle <u>cartografie digitali</u> ci ha permesso di realizzare in poco tempo questo modello che cristallizza lo stato dei luoghi prima del sisma. È un'operazione inedita di <u>“instant fabrication”</u> che sarebbe stata impossibile fino a pochi anni fa.</p>
+        <p>Un omaggio, un documento, un aiuto alla memoria per riproporre in scala quello che in gran parte purtroppo non c'è più; per ridare forma fisica a quello che ad oggi rimane solo in forma immateriale nei rilievi e nelle fotografie. Ma anche uno strumento per consentire a tutti, addetti ai lavori e non, di capire i luoghi, gli spazi, i volumi e di immaginare la ricostruzione.</p>
+        <p>L'obiettivo non era quello di realizzare un plastico suggestivo, che richiede tempo e lavoro artigianale ma si presta all'interpretazione dell'esecutore, bensì quello di restituire la morfologia di Amatrice con la massima oggettività grazie a procedimenti interamente digitali.</p>
+    </div>
+    
+    <h3 class="title">Procedimento tecnico</h3>
+    
+    <div class="workflow">
+        <h4>Modellazione</h4>
+        <p><a href="images/terrain.jpg"><img src="images/terrain.jpg" /></a>Il processo è stato impostato secondo algoritmi (c.d. modellazione generativa) che hanno consentito di ridurre il lavoro manuale e di aumentare la precisione e l'attendibilità del risultato. Il terreno è stato modellato a partire da immagini <a href="https://trac.osgeo.org/geotiff/">GeoTIFF</a> contenenti i metadati dell'elevazione (fonte: <a href="https://earthexplorer.usgs.gov/">USGS</a>).</p>
+        <p><a href="images/osm.jpg"><img src="images/osm.jpg" /></a>Gli edifici sono stati individuati in pianta incrociando i dati planimetrici della <a href="http://cartografia.regione.lazio.it/cartanet">Carta Tecnica Regionale</a> (2009) con i dati più aggiornati del progetto <a href="https://www.openstreetmap.org/">OpenStreetMap</a>.</p>
+        <p><a href="images/gh_street.jpg"><img src="images/gh_street.jpg" /></a>La modellazione dei volumi è avvenuta incrociando, per ogni singolo edificio, i dati di OpenStreetMap, gli Shapefile forniti dalla Dir. Reg. Territorio Urbanistica e Mobilità del Lazio, e verificati con rilievo a vista attraverso Google Street View ove disponibile. L'accuratezza di rappresentazione è stata aumentata lungo le vie principali, dove sono state riprodotte anche porte, finestre, balconi, cornicioni; sono inoltre state modellate le coperture. <a href="images/gh_church.jpg"><img src="images/gh_church.jpg" /></a>Maggiore dettaglio è stato dato agli elementi più caratterizzanti, quali la Chiesa di S. Agostino, il complesso del Santissimo Crocifisso, la Chiesa di S. Francesco e S. Maria di Porta, piazza Cacciatori del Tevere. Le coperture sono state verificate, edificio per edificio, con ortofoto di voli datati 2014 sempre forniti dalla Dir. Reg.</p>
+        <p><a href="images/gh_z.jpg"><img src="images/gh_z.jpg" /></a>Gli edifici sono stati collocati sul terreno con un algoritmo programmato in Grasshopper per individuare le quote di base di ciascuno.</p>
+        <p>La modellazione è stata fatta per un territorio più vasto, in previsione di un modello più grande (4x4 metri) e di un secondo modello a scala territoriale.</p>
+        
+        <h4>Stampa 3D</h4>
+        <p>Si è scelta una scala di rappresentazione di 1:500.</p>
+        <p><a href="images/assembly_1.jpg"><img src="images/assembly_1.jpg" /></a>Al fine di ridurre i tempi e di ottimizzare l'uso delle tecnologie disponibili aiutando anche la lettura del modello si è deciso di realizzare con fresatura CNC il terreno e in stampa 3D gli elementi antropici come il centro abitato e le strade.</p>
+        <p><a href="images/assembly_2.jpg"><img src="images/assembly_2.jpg" /></a>Gli edifici sono stati separati dal modello del terreno e tagliati secondo moduli quadrati da 125x125mm. Per ogni modulo è stato previsto un alloggiamento pianeggiante ad una diversa quota.</p>
+        <p><a href="images/assembly_4.jpg"><img src="images/assembly_4.png" /></a>I moduli sono stati stampati per verifica usando stampanti ad estrusione di filamento, mentre la stampa definitiva è stata eseguita da <a href="http://www.dwssystems.com/">DWS Systems</a> usando la macchina <a href="http://www.dwslab.com/xfab/">XFAB</a> di propria produzione che consente un elevato livello di accuratezza e precisione metrica. Il materiale utilizzato è Invicta 915.</p>
+        
+        <h4>Fresatura CNC</h4>
+        <p><a href="images/assembly_3.jpg"><img src="images/assembly_3.jpg" /></a>Il terreno è stato realizzato fresando polistirolo a lastre di 200x70cm, spesse 10cm, dopo aver preparato i file con un algoritmo di alleggerimento e di nesting.</p>
+        
+        <h3 class="title title-team">Team</h3>
+        <table class="team">
+            <tr>
+                <td>
+                    <div class="role">Ideazione e coordinamento</div>
+                    <div class="name"><a href="http://makerblog.it">Alessandro Ranellucci</a></div>
+                </td>
+                <td>
+                    <div class="role">Stampa 3D</div>
+                    <div class="name"><a href="http://www.dwssystems.com/">DWS Systems</a></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="role">Modellazione 3D</div>
+                    <div class="name"><a href="http://www.drawing4design.com/">Michele Calvano</a>, Francesca Guadagnoli</div>
+                </td>
+                <td>
+                    <div class="role">Fresatura CNC</div>
+                    <div class="name"><a href="https://it.linkedin.com/in/giorgio-marcatili-411446119">Giorgio Marcatili</a>, <a href="http://fabacademy.org/archives/2015/eu/students/subrizi.sergio/index.html">Sergio Subrizi</a></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="role">Cartografia</div>
+                    <div class="name">Regione Lazio - Direzione Regionale Territorio Urbanistica e Mobilità</div>
+                </td>
+                <td>
+                    <div class="role">Finitura e assemblaggio</div>
+                    <div class="name"><a href="https://it.linkedin.com/in/federicobaciocchi">Federico Baciocchi</a></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <h3 class="title title-gallery">GALLERIA FOTO</h3>
+    <div class="gallery">
+        <a href="images/gallery/model/01.jpg"><img src="images/gallery/model/t/01.jpg" /></a>
+        <a href="images/gallery/model/02.jpg"><img src="images/gallery/model/t/02.jpg" /></a>
+        <a href="images/gallery/model/03.jpg"><img src="images/gallery/model/t/03.jpg" /></a>
+        <a href="images/gallery/model/04.png"><img src="images/gallery/model/t/04.png" /></a>
+        <a href="images/gallery/model/05.jpg"><img src="images/gallery/model/t/05.jpg" /></a>
+        <a href="images/gallery/model/06.jpg"><img src="images/gallery/model/t/06.jpg" /></a>
+        <a href="images/gallery/model/07.jpg"><img src="images/gallery/model/t/07.jpg" /></a>
+        <a href="images/gallery/model/08.jpg"><img src="images/gallery/model/t/08.jpg" /></a>
+        <a href="images/gallery/model/09.png"><img src="images/gallery/model/t/09.png" /></a>
+        <a href="images/gallery/model/10.jpg"><img src="images/gallery/model/t/10.jpg" /></a>
+        <a href="images/gallery/model/11.png"><img src="images/gallery/model/t/11.png" /></a>
+        <a href="images/gallery/model/12.png"><img src="images/gallery/model/t/12.png" /></a>
+        <a href="images/gallery/printing/01.jpg"><img src="images/gallery/printing/t/01.jpg" /></a>
+        <a href="images/gallery/printing/02.jpg"><img src="images/gallery/printing/t/02.jpg" /></a>
+        <a href="images/gallery/printing/03.jpg"><img src="images/gallery/printing/t/03.jpg" /></a>
+        <a href="images/gallery/printing/04.jpg"><img src="images/gallery/printing/t/04.jpg" /></a>
+        <a href="images/gallery/printing/05.jpg"><img src="images/gallery/printing/t/05.jpg" /></a>
+        <a href="images/gallery/terrain/01.jpg"><img src="images/gallery/terrain/t/01.jpg" /></a>
+        <a href="images/gallery/terrain/02.jpg"><img src="images/gallery/terrain/t/02.jpg" /></a>
+        <a href="images/gallery/terrain/03.jpg"><img src="images/gallery/terrain/t/03.jpg" /></a>
+        <a href="images/gallery/terrain/04.jpg"><img src="images/gallery/terrain/t/04.jpg" /></a>
+        <a href="images/gallery/complete/01.jpg"><img src="images/gallery/complete/t/01.jpg" /></a>
+        <a href="images/gallery/complete/02.jpg"><img src="images/gallery/complete/t/02.jpg" /></a>
+        <a href="images/gallery/complete/03.jpg"><img src="images/gallery/complete/t/03.jpg" /></a>
+        <a href="images/gallery/complete/06.jpg"><img src="images/gallery/complete/t/06.jpg" /></a>
+        <a href="images/gallery/complete/04.jpg"><img src="images/gallery/complete/t/04.jpg" /></a>
+        <a href="images/gallery/complete/05.jpg"><img src="images/gallery/complete/t/05.jpg" /></a>
+        <a href="images/gallery/complete/07.jpg"><img src="images/gallery/complete/t/07.jpg" /></a>
+    </div>
+    
+    <h3 class="title title-download">SCARICA I FILE</h3>
+    Questi file sono resi disponibili nei termini della licenza <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA</a> (clicca per maggiori informazioni).
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licenza Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+    <div class="download">
+        <div class="group">
+            <h4>Centro storico</h4>
+            <ul>
+                <li><a href="download/Amatrice3D_centro_0.stl">Amatrice3D_centro_0.stl</a></li>
+                <li><a href="download/Amatrice3D_centro_1.stl">Amatrice3D_centro_1.stl</a></li>
+                <li><a href="download/Amatrice3D_centro_2.stl">Amatrice3D_centro_2.stl</a></li>
+                <li><a href="download/Amatrice3D_centro_3.stl">Amatrice3D_centro_3.stl</a></li>
+                <li><a href="download/Amatrice3D_centro_4.stl">Amatrice3D_centro_4.stl</a></li>
+                <li><a href="download/Amatrice3D_centro_5.stl">Amatrice3D_centro_5.stl</a></li>
+                <li><a href="download/Amatrice3D_centro_6.stl">Amatrice3D_centro_6.stl</a></li>
+                <li><a href="download/Amatrice3D_centro_7.stl">Amatrice3D_centro_7.stl</a></li>
+                <li><a href="download/Amatrice3D_centro_8.stl">Amatrice3D_centro_8.stl</a></li>
+                <li><a href="download/Amatrice3D_centro_9.stl">Amatrice3D_centro_9.stl</a></li>
+                <li><a href="download/Amatrice3D_centro_10.stl">Amatrice3D_centro_10.stl</a></li>
+                <li><a href="download/Amatrice3D_centro_11.stl">Amatrice3D_centro_11.stl</a></li>
+                <li><a href="download/Amatrice3D_centro_12.stl">Amatrice3D_centro_12.stl</a></li>
+                <li><a href="download/Amatrice3D_centro_13.stl">Amatrice3D_centro_13.stl</a></li>
+                <li><a href="download/Amatrice3D_centro_14.stl">Amatrice3D_centro_14.stl</a></li>
+                <li><a href="download/Amatrice3D_centro_15.stl">Amatrice3D_centro_15.stl</a></li>
+                <li><a href="download/Amatrice3D_centro_16.stl">Amatrice3D_centro_16.stl</a></li>
+                <li><a href="download/Amatrice3D_centro_17.stl">Amatrice3D_centro_17.stl</a></li>
+                <li><a href="download/Amatrice3D_centro_18.stl">Amatrice3D_centro_18.stl</a></li>
+                <li><a href="download/Amatrice3D_centro_19.stl">Amatrice3D_centro_19.stl</a></li>
+                <li><a href="download/Amatrice3D_centro_20.stl">Amatrice3D_centro_20.stl</a></li>
+                <li><a href="download/Amatrice3D_centro_21.stl">Amatrice3D_centro_21.stl</a></li>
+                <li><a href="download/Amatrice3D_centro_22.stl">Amatrice3D_centro_22.stl</a></li>
+                <li><a href="download/Amatrice3D_centro_23.stl">Amatrice3D_centro_23.stl</a></li>
+                <li><a href="download/Amatrice3D_centro_24.stl">Amatrice3D_centro_24.stl</a></li>
+                <li><a href="download/Amatrice3D_centro_25.stl">Amatrice3D_centro_25.stl</a></li>
+                <li><a href="download/Amatrice3D_centro_26.stl">Amatrice3D_centro_26.stl</a></li>
+                <li><a href="download/Amatrice3D_centro_27.stl">Amatrice3D_centro_27.stl</a></li>
+                <li><a href="download/Amatrice3D_centro_28.stl">Amatrice3D_centro_28.stl</a></li>
+                <li><a href="download/Amatrice3D_centro_29.stl">Amatrice3D_centro_29.stl</a></li>
+                <li><a href="download/Amatrice3D_centro_30.stl">Amatrice3D_centro_30.stl</a></li>
+            </ul>
+        </div>
+        <div class="group">
+            <h4>Altri edifici</h4>
+            <ul>
+                <li><a href="download/Amatrice3D_altri_0.stl">Amatrice3D_altri_0.stl</a></li>
+                <li><a href="download/Amatrice3D_altri_1.stl">Amatrice3D_altri_1.stl</a></li>
+                <li><a href="download/Amatrice3D_altri_2.stl">Amatrice3D_altri_2.stl</a></li>
+                <li><a href="download/Amatrice3D_altri_3.stl">Amatrice3D_altri_3.stl</a></li>
+                <li><a href="download/Amatrice3D_altri_4.stl">Amatrice3D_altri_4.stl</a></li>
+                <li><a href="download/Amatrice3D_altri_5.stl">Amatrice3D_altri_5.stl</a></li>
+                <li><a href="download/Amatrice3D_altri_6.stl">Amatrice3D_altri_6.stl</a></li>
+                <li><a href="download/Amatrice3D_altri_7.stl">Amatrice3D_altri_7.stl</a></li>
+                <li><a href="download/Amatrice3D_altri_8.stl">Amatrice3D_altri_8.stl</a></li>
+                <li><a href="download/Amatrice3D_altri_9.stl">Amatrice3D_altri_9.stl</a></li>
+                <li><a href="download/Amatrice3D_altri_10.stl">Amatrice3D_altri_10.stl</a></li>
+                <li><a href="download/Amatrice3D_altri_11.stl">Amatrice3D_altri_11.stl</a></li>
+                <li><a href="download/Amatrice3D_altri_12.stl">Amatrice3D_altri_12.stl</a></li>
+                <li><a href="download/Amatrice3D_altri_13.stl">Amatrice3D_altri_13.stl</a></li>
+                <li><a href="download/Amatrice3D_altri_14.stl">Amatrice3D_altri_14.stl</a></li>
+                <li><a href="download/Amatrice3D_altri_15.stl">Amatrice3D_altri_15.stl</a></li>
+                <li><a href="download/Amatrice3D_altri_16.stl">Amatrice3D_altri_16.stl</a></li>
+                <li><a href="download/Amatrice3D_altri_17.stl">Amatrice3D_altri_17.stl</a></li>
+                <li><a href="download/Amatrice3D_altri_18.stl">Amatrice3D_altri_18.stl</a></li>
+                <li><a href="download/Amatrice3D_altri_19.stl">Amatrice3D_altri_19.stl</a></li>
+                <li><a href="download/Amatrice3D_altri_20.stl">Amatrice3D_altri_20.stl</a></li>
+                <li><a href="download/Amatrice3D_altri_21.stl">Amatrice3D_altri_21.stl</a></li>
+                <li><a href="download/Amatrice3D_altri_22.stl">Amatrice3D_altri_22.stl</a></li>
+            </ul>
+        </div>
+        <div class="group">
+            <h4>Terreno</h4>
+            <ul>
+                <li><a href="download/Amatrice3D_terreno.stl">Amatrice3D_terreno.stl</a></li>
+            </ul>
+            
+            <h4>Strade</h4>
+            <ul>
+                <li><a href="download/Amatrice3D_strade_0.stl">Amatrice3D_strade_0.stl</a></li>
+                <li><a href="download/Amatrice3D_strade_1.stl">Amatrice3D_strade_1.stl</a></li>
+                <li><a href="download/Amatrice3D_strade_2.stl">Amatrice3D_strade_2.stl</a></li>
+                <li><a href="download/Amatrice3D_strade_3.stl">Amatrice3D_strade_3.stl</a></li>
+                <li><a href="download/Amatrice3D_strade_4.stl">Amatrice3D_strade_4.stl</a></li>
+                <li><a href="download/Amatrice3D_strade_5.stl">Amatrice3D_strade_5.stl</a></li>
+                <li><a href="download/Amatrice3D_strade_6.stl">Amatrice3D_strade_6.stl</a></li>
+                <li><a href="download/Amatrice3D_strade_7.stl">Amatrice3D_strade_7.stl</a></li>
+                <li><a href="download/Amatrice3D_strade_8.stl">Amatrice3D_strade_8.stl</a></li>
+                <li><a href="download/Amatrice3D_strade_9.stl">Amatrice3D_strade_9.stl</a></li>
+                <li><a href="download/Amatrice3D_strade_10.stl">Amatrice3D_strade_10.stl</a></li>
+                <li><a href="download/Amatrice3D_strade_11.stl">Amatrice3D_strade_11.stl</a></li>
+                <li><a href="download/Amatrice3D_strade_12.stl">Amatrice3D_strade_12.stl</a></li>
+                <li><a href="download/Amatrice3D_strade_13.stl">Amatrice3D_strade_13.stl</a></li>
+                <li><a href="download/Amatrice3D_strade_14.stl">Amatrice3D_strade_14.stl</a></li>
+                <li><a href="download/Amatrice3D_strade_15.stl">Amatrice3D_strade_15.stl</a></li>
+            </ul>
+            
+            <h4>Schemi</h4>
+            <ul>
+                <li><a href="download/schemi-montaggio.zip">Schemi di montaggio</a></li>
+            </ul>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+    
+    <h3 class="title title-press">RASSEGNA STAMPA</h3>
+    <ul class="press">
+        <li>
+            [video] <a href="http://osservatorio-amatrice.blogautore.repubblica.it/2016/10/16/amatrice-rivive-in-3d-alla-maker-faire-di-roma/">Amatrice rivive in versione 3D alla Maker Faire di Roma</a>
+            <span class="source">Repubblica.it</span>
+        </li>
+        <li>
+            <a href="http://www.corriere.it/italia-digitale/cards/amatrice-stampata-3d-plastico-chiedere-veloce-ricostruzione/speranza-il-futuro.shtml">Amatrice stampata in 3D: un plastico per chiedere una veloce ricostruzione</a>
+            <span class="source">Corriere.it</span>
+        </li>
+        <li>
+            <a href="http://www.liberoquotidiano.it/news/ultim-ora/11995217/maker-faire-amatrice-rivive-con-la-stampa-3d.html">Maker Faire: Amatrice rivive con la stampa 3D</a>
+            <span class="source">Libero</span>
+        </li>
+        <li>
+            <a href="http://www.agi.it/innovazione/2016/10/16/news/maker_faire_amatrice_rivive_con_la_stampa_3d-1168486/">Amatrice rivive con la stampa 3D</a>
+            <span class="source">AGI</span>
+        </li>
+        <li>
+            [video] <a href="https://www.youtube.com/watch?v=bWN6yVSl1Kc">Il presidente Zingaretti visita la riproduzione 3d di Amatrice</a>
+            <span class="source">cosmapress</span>
+        </li>
+        <li>
+            [video] <a href="https://www.youtube.com/watch?v=wf-KQwOBF7s">Zingaretti al Maker Faire, tra palle di fumo e Amatrice in 3D</a>
+            <span class="source">alaNEWS</span>
+        </li>
+        <li>
+            <a href="https://3dprintingindustry.com/news/dws-3d-printing-helps-preserve-history-earthquake-98590/">DWS 3D printing helps preserve history after earthquake</a>
+            <span class="source">3D Printing Industry</span>
+        </li>
+        <li>
+            <a href="http://blog.it.rhino3d.com/2016/11/ricostruzione-3d-della-citta-di.html">Ricostruzione 3D della città di Amatrice utilizzando Rhinoceros e Grasshopper. Un processo condiviso</a>
+            <span class="source">Rhino3D Blog</span>
+        </li>
+    </ul>
+    
+    <footer>
+        Per maggiori informazioni sul progetto è possibile contattare Maker Faire Rome (<a href="mailto:press@makerfairerome.eu">press@makerfairerome.eu</a>) 
+        e Alessandro Ranellucci (<a href="mailto:alessandro@pintle.it">alessandro@pintle.it</a>).
+    </footer>
+</div>
+
+<script>
+$(function () {
+    $('.contents a:has(img)').fancybox();
+});
+</script>
+
+</body>
+</html>

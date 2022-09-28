@@ -1,0 +1,403 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* --------------- */
+
+@font-face {
+  font-family: 'Platform Web';
+  src: url('fonts/Platform-Medium-Web.eot');
+  src: url('fonts/Platform-Medium-Web.eot?#iefix') format('embedded-opentype'),
+     url('fonts/Platform-Medium-Web.woff') format('woff'),
+     url('fonts/Platform-Medium-Web.ttf') format('truetype'),
+     url('fonts/Platform-Medium-Web.svg#Platform Web') format('svg');
+  font-weight:  500;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+.Platform-Medium-Web {
+  font-family: 'Platform Web';
+  font-weight:  500;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Portrait Text Web';
+  src: url('fonts/PortraitText-Regular-Web.eot');
+  src: url('fonts/PortraitText-Regular-Web.eot?#iefix') format('embedded-opentype'),
+     url('fonts/PortraitText-Regular-Web.woff') format('woff'),
+     url('fonts/PortraitText-Regular-Web.ttf') format('truetype'),
+     url('fonts/PortraitText-Regular-Web.svg#Portrait Text Web') format('svg');
+  font-weight:  400;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+.PortraitText-Regular-Web {
+  font-family: 'Portrait Text Web';
+  font-weight:  400;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Portrait Text Web';
+  src: url('fonts/PortraitText-RegularItalic-Web.eot');
+  src: url('fonts/PortraitText-RegularItalic-Web.eot?#iefix') format('embedded-opentype'),
+     url('fonts/PortraitText-RegularItalic-Web.woff') format('woff'),
+     url('fonts/PortraitText-RegularItalic-Web.ttf') format('truetype'),
+     url('fonts/PortraitText-RegularItalic-Web.svg#Portrait Text Web') format('svg');
+  font-weight:  400;
+  font-style:   italic;
+  font-stretch: normal;
+}
+
+.PortraitText-RegularItalic-Web {
+  font-family: 'Portrait Text Web';
+  font-weight:  400;
+  font-style:   italic;
+  font-stretch: normal;
+}
+
+body {
+  font-size: 16px;
+  line-height: 20px;
+  background-color: white;
+  -webkit-font-smoothing: antialiased;
+}
+
+a, a:visited {
+  color: #333;
+  text-decoration: none;
+}
+
+.padding-20 {
+  padding: 20px;
+}
+
+body, div, p {
+  font-family: "Portrait Text Web", serif;
+  font-size: 16px;
+  color: #333;
+}
+
+nav {
+  position: absolute;
+}
+
+nav ul.nav_list {
+  padding: 15px;
+}
+nav ul.nav_list li {
+  margin-bottom: 2px;
+}
+nav ul.nav_list li a {
+  font-size: 0.9em;
+  font-family: "Platform Web",  sans-serif;
+  word-spacing: 0;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #333;
+}
+nav ul.nav_list li a:hover {
+    border-bottom: 2px solid #666;
+}
+
+#menu .mfr-logo img {
+    margin-top: 30px;
+    margin-left: 10px;
+    max-width: 140px;
+}
+
+#menu .mini-title {
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-family: "Platform Web",  sans-serif;
+    font-weight: 100;
+    letter-spacing: 1.3px;
+    font-size: 1.6em;
+    line-height: 1.3em;
+    color: black;
+}
+
+#menu .mini-title .subtitle {
+    display: block;
+    font-size: 0.62em;
+    line-height: 0.6em;
+}
+
+h2.slogan {
+  position: absolute;
+  left: 700px;
+  top: 20px;
+  text-transform: uppercase;
+  font-family: "Platform Web",  sans-serif;
+  word-spacing: 0;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 1.2em;
+  line-height: 1.2;
+  width: 250px;
+}
+
+h1.title {
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    text-transform: uppercase;
+    font-family: "Platform Web",  sans-serif;
+    font-weight: 100;
+    letter-spacing: 1.3px;
+    font-size: 8em;
+    line-height: 0.6em;
+    opacity: 0.9;
+    text-shadow: 1px 1px white;
+    color: black;
+}
+
+h1.title .subtitle {
+    font-size: 0.625em;
+    line-height: 0.3em;
+}
+
+.tiles {
+    position: absolute;
+    top: 0;
+    left: 170px;
+    width: 654px;
+    float: left;
+    font-size: 0;
+    line-height: 0;
+}
+.tiles img {
+    width: 170px;
+    height: 170px;
+    margin: 0;
+    padding: 0;
+}
+
+.sponsors {
+  position: absolute;
+  left: 20px;
+  top: 530px;
+  text-transform: uppercase;
+  font-family: "Platform Web",  sans-serif;
+  font-size: 1.2em;
+  line-height: 1.2;
+  color: #656565;
+  letter-spacing: 1px;
+}
+
+.sponsors img {
+    max-width: 150px;
+    max-height: 70px;
+    vertical-align: middle;
+    margin-right: 20px;
+}
+
+.contents {
+    margin-top: 650px;
+    margin-left: 160px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 800px;
+}
+
+.contents a, .contents a:visited {
+  color: #333;
+  text-decoration: underline;
+}
+
+.slogan2 {
+  margin-left: 0;
+  text-transform: uppercase;
+  font-family: "Platform Web",  sans-serif;
+  font-size: 1.5em;
+  line-height: 1.2;
+  color: #656565;
+  letter-spacing: 1px;
+   width: 500px;
+}
+
+.intro {
+    margin-top: 40px;
+    margin-left: 0;
+}
+
+.contents p {
+  text-transform: none;
+  font-family: "Portrait Text Web", serif;
+  font-weight: 400;
+  word-spacing: 0;
+  letter-spacing: 0;
+  font-size: 1.3em;
+  line-height: 1.2;
+  margin-left: 120px;
+  clear: both;
+}
+.contents p.italic_indent {
+  margin-left: 0;
+  margin-right: 120px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: "Portrait Text Web", sans-serif;
+  font-weight: 400;
+  word-spacing: 0;
+  font-style: italic;
+  letter-spacing: 0;
+  line-height: 1.6;
+  font-size: 1.5em;
+  line-height: 1.2;
+}
+
+.contents p img {
+    max-width: 200px;
+    max-height: 200px;
+    float: right;
+    margin: 10px 0 10px 10px;
+    padding: 5px;
+    border: 1px solid #AAA;
+}
+
+h3.title {
+    font-family: "Platform Web",  sans-serif;
+    word-spacing: 0;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 3.5em;
+    line-height: 1.05em;
+    text-transform: uppercase;
+    margin-top: 80px;
+    clear: both;
+}
+
+h4 {
+    font-family: "Platform Web",  sans-serif;
+    word-spacing: 0;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 1.5em;
+    line-height: 1.05em;
+    text-transform: uppercase;
+    margin-top: 20px;
+    margin-left: 120px;
+}
+
+.team {
+    margin-top: 20px;
+}
+
+.team td {
+    width: 50%;
+    font-size: 1.2em;
+    padding-bottom: 20px;
+    padding-right: 15px;
+}
+
+.team td .name {
+    font-size: 1.2em;
+    line-height: 1.1em;
+}
+
+.team td a {
+    text-decoration: none;
+}
+
+.gallery img {
+    max-height: 150px;
+    max-width: 150px;
+}
+
+.press {
+    margin-top: 10px;
+}
+
+.press li {
+    padding: 10px;
+    font-size: 1.4em;
+}
+
+.press li a {
+    font-size: 0.8em;
+}
+
+.press li .source {
+    font-style: italic;
+}
+
+.press li .source:before {
+    content: '(';
+}
+
+.press li .source:after {
+    content: ')';
+}
+
+.download .group {
+    width: 33%;
+    float: left;
+}
+
+.download .group h4 {
+    margin-left: 0;
+}
+
+.download a {
+    font-family: "Platform Web",  sans-serif;
+    font-weight: normal;
+}
+
+footer {
+    margin-top: 80px;
+    margin-bottom: 30px;
+}
